@@ -1,8 +1,11 @@
 /*
  * TicTacToe.c
  *
- *  Created on: Apr 19, 2018
- *      Author: thedr_000
+ *  Created on: Apr 17, 2018
+ *  Author: Fadhar Jared Castillo
+ *  Bronco#: 012546365
+ *  Course: CS 256 C++ Programming
+ *  Homework 3: Tic-Tac-Toe
  */
 #include <stdio.h>
 #include <stdlib.h>
