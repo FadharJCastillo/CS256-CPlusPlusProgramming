@@ -14,7 +14,7 @@
 void displayBoard(char array[3][3]);
 int getRow();
 int getColumn();
-int validMove(int xCoord, int yCoord, char array[3][3]);
+int validMove(int yCoord, int xCoord, char array[3][3]);
 int isWinner(char array[3][3]);
 int checkHorizontals(char array[3][3]);
 int checkVerticals(char array[3][3]);
@@ -42,13 +42,13 @@ int main(int argc, char **argv)
 
 		do
 		{
-		xCoord = getRow();
-		yCoord= getColumn();
-		} while(validMove(xCoord, yCoord, array) == 0);
+		yCoord = getRow();
+		xCoord= getColumn();
+		} while(validMove(yCoord, xCoord, array) == 0);
 
 		if(turn == 0)
 		{
-			array[xCoord][yCoord] = 'X';
+			array[yCoord][xCoord] = 'X';
 			if(isWinner(array) == 1)
 			{
 				displayBoard(array);
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 		}
 		else if(turn == 1)
 		{
-			array[xCoord][yCoord] = 'O';
+			array[yCoord][xCoord] = 'O';
 			if(isWinner(array) == 1)
 			{
 				displayBoard(array);
@@ -122,9 +122,9 @@ int getRow()
 	return yCoord;
 }
 
-int validMove(int xCoord, int yCoord, char array[3][3])
+int validMove(int yCoord, int xCoord, char array[3][3])
 {
-	if(array[xCoord][yCoord] == 'X' || array[xCoord][yCoord] == 'O')
+	if(array[yCoord][xCoord] == 'X' || array[yCoord][xCoord] == 'O')
 	{
 		printf("Invalid move! Try again!\n");
 		return 0;
