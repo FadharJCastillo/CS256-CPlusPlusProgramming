@@ -1,0 +1,3 @@
+﻿  InClassAssignmentPrefCust.cpp
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\inclassassignmentprefcust\inclassassignmentprefcust\inclassassignmentprefcust.cpp(53): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  InClassAssignmentPrefCust.vcxproj -> C:\Users\thedr_000\Documents\Eclipse C Workspace\CS256-CPlusPlusProgramming\InClassAssignments\InClassAssignmentPrefCust\Debug\InClassAssignmentPrefCust.exe
