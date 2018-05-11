@@ -1,3 +1,7 @@
+/*Fadhar J.Castillo
+CS 256 C++ Programming
+AGameOf21*/
+
 #pragma once
 // Specification file for the Die class
 #ifndef DIE_H

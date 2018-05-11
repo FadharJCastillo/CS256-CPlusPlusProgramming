@@ -1,3 +1,7 @@
+/*Fadhar J.Castillo
+CS 256 C++ Programming
+AGameOf21*/
+
 // Implememtation file for the Die class
 
 #include "stdafx.h"
