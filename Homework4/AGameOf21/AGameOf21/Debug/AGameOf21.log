@@ -1,3 +1,2 @@
-﻿  Die.cpp
-c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\homework4\agameof21\agameof21\die.cpp(16): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  AGameOf21.cpp
   AGameOf21.vcxproj -> C:\Users\thedr_000\Documents\Eclipse C Workspace\CS256-CPlusPlusProgramming\Homework4\AGameOf21\Debug\AGameOf21.exe
