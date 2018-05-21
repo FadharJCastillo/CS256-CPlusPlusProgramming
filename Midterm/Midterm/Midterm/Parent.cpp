@@ -6,26 +6,26 @@ Parent::Parent()
 {
 	Human();
 }
-Parent::Parent(string nm, int age, char sx)
-{
-	Human(nm, age, sx);
-}
-Child Parent::getChild(int index)
-{
-	if (index < children.size())
+Parent::Parent(string nm, int age, char sx) :
+	Human(nm, age, sx) {}
+Child* Parent::getChild(int index)
+{ 
+	Child *c = NULL;
+	if (index < (int)children.size())
 	{
-		return children[index];
+		c = children[index];
 	}
+	return c;
 }
 void Parent::setChild(Child& ch)
 {
-	children.push_back(ch);
+	children.push_back(&ch);
 }
 void Parent::setChildName(int index, string name)
 {
-	if (index < children.size())
+	if (index < (int)children.size())
 	{
-		children[index].setName(name);
+		children[index]->setName(name);
 	}
 }
 void Parent::work(string work)

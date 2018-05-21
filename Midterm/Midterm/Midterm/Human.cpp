@@ -1,18 +1,11 @@
 #include "stdafx.h"
 #include "Human.h"
 
-Human::Human()
-{
-	name = "";
-	age = 0;
-	sex = ' ';
-}
-Human::Human(string nm, int ag, char sx)
-{
-	name = nm;
-	age = ag;
-	sex = sx;
-}
+Human::Human() :
+	name(""), age(0), sex(' ') {}
+Human::Human(string nm, int ag, char sx) :
+	name(nm), age(ag),sex(sx) {}
+
 void Human::setName(string nm)
 {
 	name = nm;
@@ -36,4 +29,9 @@ int Human::getAge()
 char Human::getSex()
 {
 	return sex;
+}
+
+void Human::work(string work)
+{
+	std::cout << work;
 }
