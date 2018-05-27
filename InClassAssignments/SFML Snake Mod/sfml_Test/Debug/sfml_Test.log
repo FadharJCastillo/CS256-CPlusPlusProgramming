@@ -1,0 +1,12 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (sfml_Test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  stdafx.cpp
+  sfml_Snake.cpp
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(17): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(66): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(82): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(114): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(191): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(198): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(204): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\thedr_000\documents\eclipse c workspace\cs256-cplusplusprogramming\inclassassignments\sfml snake mod\sfml_test\sfml_snake.cpp(208): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  sfml_Test.vcxproj -> C:\Users\thedr_000\Documents\Eclipse C Workspace\CS256-CPlusPlusProgramming\InClassAssignments\SFML Snake Mod\Debug\sfml_Snake.exe
