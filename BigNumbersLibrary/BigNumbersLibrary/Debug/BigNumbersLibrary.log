@@ -1,0 +1,17 @@
+﻿  stdafx.cpp
+  BigNumbers.cpp
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(58): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(264): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(285): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(322): warning C4018: '<': signed/unsigned mismatch
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(343): warning C4018: '<': signed/unsigned mismatch
+  BigNumbersLibrary.cpp
+  Generating Code...
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(116): warning C4715: 'BigNumbers::operator+': not all control paths return a value
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(182): warning C4715: 'BigNumbers::operator-': not all control paths return a value
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(220): warning C4715: 'BigNumbers::operator*': not all control paths return a value
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(298): warning C4715: 'BigNumbers::operator>': not all control paths return a value
+c:\users\thedr_000\source\repos\bignumberslibrary\bignumberslibrary\bignumbers.cpp(356): warning C4715: 'BigNumbers::operator<': not all control paths return a value
+  BigNumbersLibrary.vcxproj -> C:\Users\thedr_000\source\repos\BigNumbersLibrary\Debug\BigNumbersLibrary.dll
