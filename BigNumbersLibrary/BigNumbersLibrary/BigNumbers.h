@@ -1,3 +1,7 @@
+//Fadhar Jared Castillo
+//CS 256 C++ Programming
+//Final Part 1: BigNumbersLibrary
+
 #pragma once
 #include "stdafx.h"
 #include <string>
@@ -26,6 +30,12 @@ private:
 	BigNumbers add(std::vector<int> lhs, std::vector<int> rhs);
 	///Private helper function that performs multiplication
 	BigNumbers multiply(std::vector<int> lhs, std::vector<int> rhs);
+	///Private helper function that performs division and modulo
+	///To return the quotient, pass mode = 0. To return remainder pass mode = 1.
+	BigNumbers divide(BigNumbers lhs, BigNumbers rhs, int mode);
+	///Private helper method that removes the leading zeros from inputted digits
+	///Example "000056785" becomes 56785 after execution
+	void removeLeadingZeros();
 public:
 	/**Constructor: BigNumbers
 	*Usage: BigNumbers bigNum;
@@ -35,7 +45,9 @@ public:
 	/**Constructor: BigNumbers
 	*Usage: BigNumbers bigNum("43243243223423432");
 	*Creates a BigNumbers object from a std::string representing a list
-	*of digits.
+	* of digits. To construct a negative number, the '-' symbol must be used
+	* before the digits. To construct a positive number, no '+' symbol is needed.
+	* if it is used, unexpected results may occur.
 	*/
 	BigNumbers(const std::string& number);
 
@@ -60,14 +72,15 @@ public:
 	*/
 	BigNumbers operator*(const BigNumbers& bigNumber);
 	/**Operator: /
-	*Usage: BigNumbers result = bigNum1 / bigNum2;
+	*Usage: try{BigNumbers result = bigNum1 / bigNum2;}catch(BigNumbers::DivisionByZeroException){...}
 	*Divides two BigNumbers objects and returns the result as a BigNumbers object
-	*	Not intended to be used as float or double
+	*   Throws DivisionByZeroException if the divisor is zero.
 	*/
-	BigNumbers operator/(const BigNumbers& bigNumber);
+	BigNumbers operator/(const BigNumbers& bigNumber) throw();
 	/**Operator: %
-	*Usage: BigNumbers result = bigNum1 % bigNum2;
+	*Usage: try{BigNumbers result = bigNum1 % bigNum2;}catch(BigNumbers::DivisionByZeroException){...};
 	*Computes the remainder of two BigNumbers objects and returns the result as a BigNumbers object
+	*   Throws DivisionByZeroException if the divisor is zero
 	*/
 	BigNumbers operator%(const BigNumbers& bigNumber);
 	/**Operator: >
@@ -82,4 +95,15 @@ public:
 	*	bigNum1 is smaller than bigNum2
 	*/
 	bool operator<(const BigNumbers& bigNumber) const;
+	/**Operator: ==
+	*Usage: if(bigNum1 == bigNum2) ...
+	*Compares the left hand bigNum1 to right hand bigNumb2 and determines if
+	*	bigNum1 is equal to bigNum2
+	*/
+	bool operator==(const BigNumbers& bigNumber) const;
+
+	/**class DivisionByZeroException
+	*An instance of this class may be returned by the division and remainder operators.
+	*/
+	class DivisionByZeroException {};
 };

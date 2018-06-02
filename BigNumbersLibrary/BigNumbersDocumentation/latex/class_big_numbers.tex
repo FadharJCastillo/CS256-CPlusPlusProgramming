@@ -4,6 +4,11 @@
 
 {\ttfamily \#include $<$Big\+Numbers.\+h$>$}
 
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_big_numbers_1_1_division_by_zero_exception}{Division\+By\+Zero\+Exception}}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,13 +24,15 @@
 \item 
 \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_a831e8203da581ad999f9f45940a92776}{operator$\ast$}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number)
 \item 
-\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_af7ad124c6e92a0ae647f3aa3cd85f11a}{operator/}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number)
+\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_af7ad124c6e92a0ae647f3aa3cd85f11a}{operator/}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number)  throw ()
 \item 
 \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_a15bc2fa1946a85e8cd745a26e460d51e}{operator\%}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number)
 \item 
 bool \mbox{\hyperlink{class_big_numbers_a5fed3d1c9f239f4c57348953077eab77}{operator$>$}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number) const
 \item 
 bool \mbox{\hyperlink{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}{operator$<$}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number) const
+\item 
+bool \mbox{\hyperlink{class_big_numbers_a7c84969ba0fe1401cfb30544cb0d91a5}{operator==}} (const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&big\+Number) const
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -41,7 +48,11 @@ bool \mbox{\hyperlink{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}{opera
 \begin{DoxyCompactList}\small\item\em Private helper function that performs addition. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_big_numbers_aaa4248b6478e04df5765c1c3d8587cc5}\label{class_big_numbers_aaa4248b6478e04df5765c1c3d8587cc5}} 
 \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_aaa4248b6478e04df5765c1c3d8587cc5}{multiply}} (std\+::vector$<$ int $>$ lhs, std\+::vector$<$ int $>$ rhs)
-\begin{DoxyCompactList}\small\item\em Private helper function that performs multiplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Private helper function that performs multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \mbox{\hyperlink{class_big_numbers_a72014485e13fae1c0711f4fd6628392a}{divide}} (\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} lhs, \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} rhs, int mode)
+\item 
+void \mbox{\hyperlink{class_big_numbers_a70e286c61489246cdfc307c2849aaaf2}{remove\+Leading\+Zeros}} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -72,12 +83,18 @@ Constructor\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Usage\+: \mbox
 \subsubsection{\texorpdfstring{Big\+Numbers()}{BigNumbers()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Big\+Numbers\+::\+Big\+Numbers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{number }\end{DoxyParamCaption})}
 
-Constructor\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} big\+Num(\char`\"{}43243243223423432\char`\"{}); Creates a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object from a std\+::string representing a list of digits.
+Constructor\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} big\+Num(\char`\"{}43243243223423432\char`\"{}); Creates a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object from a std\+::string representing a list of digits. To construct a negative number, the \textquotesingle{}-\/\textquotesingle{} symbol must be used before the digits. To construct a positive number, no \textquotesingle{}+\textquotesingle{} symbol is needed. if it is used, unexpected results may occur.
 
 Constructor\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} big\+Num(\char`\"{}-\/43243243223423432\char`\"{}), big\+Num2(\char`\"{}550533\char`\"{}); Creates a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object from a std\+::string representing a list of digits. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_big_numbers_af879df797b67fcbe442746d0532529ab}\label{class_big_numbers_af879df797b67fcbe442746d0532529ab}} 
+\mbox{\Hypertarget{class_big_numbers_a72014485e13fae1c0711f4fd6628392a}\label{class_big_numbers_a72014485e13fae1c0711f4fd6628392a}} 
+\index{Big\+Numbers@{Big\+Numbers}!divide@{divide}}
+\index{divide@{divide}!Big\+Numbers@{Big\+Numbers}}
+\subsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Big\+Numbers\+::divide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}}}]{lhs,  }\item[{\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}}}]{rhs,  }\item[{int}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Private helper function that performs division and modulo To return the quotient, pass mode = 0. To return remainder pass mode = 1. \mbox{\Hypertarget{class_big_numbers_af879df797b67fcbe442746d0532529ab}\label{class_big_numbers_af879df797b67fcbe442746d0532529ab}} 
 \index{Big\+Numbers@{Big\+Numbers}!operator std\+::string@{operator std\+::string}}
 \index{operator std\+::string@{operator std\+::string}!Big\+Numbers@{Big\+Numbers}}
 \subsubsection{\texorpdfstring{operator std\+::string()}{operator std::string()}}
@@ -88,6 +105,8 @@ Operator\+: std\+::string Usage\+: cout $<$$<$ static\+\_\+cast$<$string$>$(big\
 \index{operator\%@{operator\%}!Big\+Numbers@{Big\+Numbers}}
 \subsubsection{\texorpdfstring{operator\%()}{operator\%()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Big\+Numbers\+::operator\% (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption})}
+
+Operator\+: \% Usage\+: try\{\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} result = big\+Num1 \% big\+Num2;\}catch(\+Big\+Numbers\+::\+Division\+By\+Zero\+Exception)\{...\}; Computes the remainder of two \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} objects and returns the result as a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object Throws \mbox{\hyperlink{class_big_numbers_1_1_division_by_zero_exception}{Division\+By\+Zero\+Exception}} if the divisor is zero
 
 Operator\+: \% Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} result = big\+Num1 \% big\+Num2; Computes the remainder of two \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} objects and returns the result as a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object \mbox{\Hypertarget{class_big_numbers_a831e8203da581ad999f9f45940a92776}\label{class_big_numbers_a831e8203da581ad999f9f45940a92776}} 
 \index{Big\+Numbers@{Big\+Numbers}!operator$\ast$@{operator$\ast$}}
@@ -111,23 +130,37 @@ Operator\+: -\/ Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} resu
 \index{Big\+Numbers@{Big\+Numbers}!operator/@{operator/}}
 \index{operator/@{operator/}!Big\+Numbers@{Big\+Numbers}}
 \subsubsection{\texorpdfstring{operator/()}{operator/()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Big\+Numbers\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} Big\+Numbers\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption}) throw  ) }
 
-Operator\+: / Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} result = big\+Num1 / big\+Num2; Divides two \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} objects and returns the result as a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object Not intended to be used as float or double \mbox{\Hypertarget{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}\label{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}} 
+Operator\+: / Usage\+: try\{\mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} result = big\+Num1 / big\+Num2;\}catch(\+Big\+Numbers\+::\+Division\+By\+Zero\+Exception)\{...\} Divides two \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} objects and returns the result as a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object Throws \mbox{\hyperlink{class_big_numbers_1_1_division_by_zero_exception}{Division\+By\+Zero\+Exception}} if the divisor is zero.
+
+Operator\+: / Usage\+: \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} result = big\+Num1 / big\+Num2; Divides two \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} objects and returns the result as a \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} object Not intended to be used as float or double Throws \mbox{\hyperlink{class_big_numbers_1_1_division_by_zero_exception}{Division\+By\+Zero\+Exception}} if the divisor is zero \mbox{\Hypertarget{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}\label{class_big_numbers_aed0d88ccd1ba6d7b1548c14a95de1b1a}} 
 \index{Big\+Numbers@{Big\+Numbers}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Big\+Numbers@{Big\+Numbers}}
 \subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
 {\footnotesize\ttfamily bool Big\+Numbers\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption}) const}
 
-Operator\+: $<$ Usage\+: bool is\+Smaller = big\+Num1 $<$ big\+Num2; Compares the left hand big\+Num1 to right hand big\+Numb2 and determines if big\+Num1 is smaller than big\+Num2 \mbox{\Hypertarget{class_big_numbers_a5fed3d1c9f239f4c57348953077eab77}\label{class_big_numbers_a5fed3d1c9f239f4c57348953077eab77}} 
+Operator\+: $<$ Usage\+: bool is\+Smaller = big\+Num1 $<$ big\+Num2; Compares the left hand big\+Num1 to right hand big\+Numb2 and determines if big\+Num1 is smaller than big\+Num2 \mbox{\Hypertarget{class_big_numbers_a7c84969ba0fe1401cfb30544cb0d91a5}\label{class_big_numbers_a7c84969ba0fe1401cfb30544cb0d91a5}} 
+\index{Big\+Numbers@{Big\+Numbers}!operator==@{operator==}}
+\index{operator==@{operator==}!Big\+Numbers@{Big\+Numbers}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Big\+Numbers\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption}) const}
+
+Operator\+: == Usage\+: if(big\+Num1 == big\+Num2) ... Compares the left hand big\+Num1 to right hand big\+Numb2 and determines if big\+Num1 is equal to big\+Num2 \mbox{\Hypertarget{class_big_numbers_a5fed3d1c9f239f4c57348953077eab77}\label{class_big_numbers_a5fed3d1c9f239f4c57348953077eab77}} 
 \index{Big\+Numbers@{Big\+Numbers}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!Big\+Numbers@{Big\+Numbers}}
 \subsubsection{\texorpdfstring{operator$>$()}{operator>()}}
 {\footnotesize\ttfamily bool Big\+Numbers\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_big_numbers}{Big\+Numbers}} \&}]{big\+Number }\end{DoxyParamCaption}) const}
 
-Operator\+: $>$ Usage\+: bool is\+Bigger = big\+Num1 $>$ big\+Num2; Compares the left hand big\+Num1 to right hand big\+Numb2 and determines if big\+Num1 is greater than big\+Num2 
+Operator\+: $>$ Usage\+: bool is\+Bigger = big\+Num1 $>$ big\+Num2; Compares the left hand big\+Num1 to right hand big\+Numb2 and determines if big\+Num1 is greater than big\+Num2 \mbox{\Hypertarget{class_big_numbers_a70e286c61489246cdfc307c2849aaaf2}\label{class_big_numbers_a70e286c61489246cdfc307c2849aaaf2}} 
+\index{Big\+Numbers@{Big\+Numbers}!remove\+Leading\+Zeros@{remove\+Leading\+Zeros}}
+\index{remove\+Leading\+Zeros@{remove\+Leading\+Zeros}!Big\+Numbers@{Big\+Numbers}}
+\subsubsection{\texorpdfstring{remove\+Leading\+Zeros()}{removeLeadingZeros()}}
+{\footnotesize\ttfamily void Big\+Numbers\+::remove\+Leading\+Zeros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Private helper method that removes the leading zeros from inputted digits Example \char`\"{}000056785\char`\"{} becomes 56785 after execution 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/thedr\+\_\+000/source/repos/\+Big\+Numbers\+Library/\+Big\+Numbers\+Library/Big\+Numbers.\+h\item 
-C\+:/\+Users/thedr\+\_\+000/source/repos/\+Big\+Numbers\+Library/\+Big\+Numbers\+Library/Big\+Numbers.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/thedr\+\_\+000/\+Documents/\+Eclipse C Workspace/\+C\+S256-\/\+C\+Plus\+Plus\+Programming/\+Big\+Numbers\+Library/\+Big\+Numbers\+Library/Big\+Numbers.\+h\item 
+C\+:/\+Users/thedr\+\_\+000/\+Documents/\+Eclipse C Workspace/\+C\+S256-\/\+C\+Plus\+Plus\+Programming/\+Big\+Numbers\+Library/\+Big\+Numbers\+Library/Big\+Numbers.\+cpp\end{DoxyCompactItemize}

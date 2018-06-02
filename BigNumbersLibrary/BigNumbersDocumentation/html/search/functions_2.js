@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multiply',['multiply',['../class_big_numbers.html#aaa4248b6478e04df5765c1c3d8587cc5',1,'BigNumbers']]]
+  ['divide',['divide',['../class_big_numbers.html#a72014485e13fae1c0711f4fd6628392a',1,'BigNumbers']]]
 ];
